@@ -219,7 +219,7 @@ body {
     height: auto;
     object-fit: cover;
     border-radius: 1rem;
-    animation: image-reveal 1.7s linear both;
+    animation: image-reveal 0.7s linear both;
     animation-timeline: view(block 0% 0%);
     animation-range: entry 0% cover 40%;
     will-change: clip-path, transform, opacity;
