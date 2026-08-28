@@ -24,7 +24,7 @@ body {
     height: 80vh;
     display: flex;
     /* flex-direction: wrap; */
-    background-image: url("images/header-background.jpg");
+    background-image: url("images/header-background.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,7 +63,11 @@ body {
     margin-top: auto;
     margin-bottom: 2rem;
     font-weight: 400;
-    animation: text-bslide-in 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: none;
+}
+
+.hero-text p.is-visible {
+    animation: text-bslide-in 0.5s linear both;
 }
 .hero-text p span{
     font-size: 2rem;
@@ -75,10 +79,14 @@ body {
     height: 70vh;
     object-fit: cover;
     border-radius: 1rem;
-    clip-path: circle(0% at 50% 50%);
-    animation: camera-shutter 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    clip-path: circle(75% at 50% 50%);
+    animation: none;
     /* animation-timeline: view(block 0% 0%); */
     animation-range: entry 0% cover 40%;
+}
+
+.hero-image img.is-visible {
+    animation: camera-shutter 0.8s linear forwards;
 }
 
 @keyframes camera-shutter {
@@ -97,12 +105,18 @@ body {
         opacity: 1;
     }
 }
+.section-hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+}
 
 .section-overlay {
     width: 100%;
     height: 100%;
     background-color: #2a3031;
-    padding: 2rem;
+    padding-top: 8rem;
     text-align: center;
 }
 
@@ -110,6 +124,7 @@ body {
     width: 70%;
     height: 100%;
     margin: 0 auto;
+    margin-bottom: 15rem;
     display: flex;
     text-align: center;
 }
@@ -129,9 +144,14 @@ body {
     height: 70vh;
     object-fit: cover;
     border-radius: 1rem;
-    clip-path: inset(0 100% 0 0);
-    animation: image-reveal 1.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    clip-path: inset(0 0 0 0);
+    animation: none;
     /* animation-timeline: view(block 0% 0%); */
+    animation-range: entry 0% cover 40%;
+}
+
+.hero-portrait > img {
+    animation: image-reveal 0.5s linear forwards;
     animation-range: entry 0% cover 40%;
 }
 
@@ -152,26 +172,475 @@ body {
 .hero-portrait .hero-text p img {
     width: 10vh;
     height: 10vh;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     object-fit: cover;
     border-radius: 2rem;
-    clip-path: inset(0 100% 0 0);
-    animation: image-reveal 1.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    clip-path: inset(0 0 0 0);
+    animation: none;
     /* animation-timeline: view(block 0% 0%); */
     animation-range: entry 0% cover 40%;
 }
+
+.hero-portrait .hero-text p img.is-visible {
+    animation: image-reveal 0.5s linear forwards;
+}
+
+.jobs{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 15rem;
+    text-align: left;
+    width: 70%;
+}
+
+.jobs > div{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 55%;
+}
+
+.jobs figure{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobs > div figure{
+    width: 100%;
+}
+/*  */
+.jobs figure img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    animation: image-reveal 1.7s linear both;
+    animation-timeline: view(block 0% 0%);
+    animation-range: entry 0% cover 40%;
+    will-change: clip-path, transform, opacity;
+}
+
+.jobs figcaption {
+    width: 100%;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.jobs > figure{
+    flex: 0 0 45%;
+    height: 100%;
+    margin-left: 2rem;
+    margin-top: 0;
+}
+
+.jobs > figure img{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    animation: image-reveal 1.7s linear both;
+    animation-timeline: view(block 0% 0%);
+    animation-range: entry 0% cover 40%;
+    will-change: clip-path, transform, opacity;
+}
+
+.corrects {
+    width: 70%;
+    margin: 3rem auto 1rem;
+    margin-bottom: 15rem;
+    padding-bottom: 2rem;
+    columns: 2 18rem;
+    column-gap: 2rem;
+    text-align: left;
+}
+
+.corrects > div {
+    display: contents;
+}
+
+.corrects h2 {
+    break-inside: avoid;
+    margin: 0 0 2rem;
+}
+
+.corrects figure {
+    position: relative;
+    width: 100%;
+    margin: 0 0 2rem;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+
+
+.corrects figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.corrects > div figure img:first-of-type {
+    position: relative;
+    z-index: 1;
+}
+
+.corrects > div figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.corrects > div figure img:last-of-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    z-index: 2;
+    object-fit: cover;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.35s ease;
+}
+
+.corrects .correct2 figure img {
+    aspect-ratio: 12 / 16;
+}
+
+.corrects .correct2 figure img:last-of-type {
+    aspect-ratio: 12 / 16;
+}
+
+.corrects .correct2 figure {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.corrects > div figure:hover img:last-of-type {
+    clip-path: inset(0 0 0 0);
+}
+
+.corrects > div figure:focus-within img:last-of-type {
+    clip-path: inset(0 0 0 0);
+}
+
+.corrects figcaption {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+
+/* Montajes */
+.mountages {
+    width: 70%;
+    margin: 3rem auto 1rem;
+    margin-bottom: 15rem;
+    columns: 2 18rem;
+    column-gap: 2rem;
+    text-align: left;
+}
+
+.mountages > div {
+    display: contents;
+}
+
+.mountages div h2,
+.mountages div figure {
+    break-inside: avoid;
+    margin: 0 0 2rem;
+}
+
+.mountages div h2 {
+    display: block;
+}
+
+.mountages div figure {
+    position: relative;
+    width: 100%;
+}
+
+/* Contenedor de la pila de imágenes */
+.image-stack {
+    position: relative;
+    width: 80%;
+    height: 20rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+    .image-stack {
+        height: auto;
+    }
+}
+
+.image-stack img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(1.05);
+    will-change: opacity, transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Capa base (primer elemento) */
+.image-stack .layer-1 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Configuración de animación para cada capa */
+.image-stack img {
+    animation: layer-reveal 0.8s linear forwards;
+    animation-play-state: paused;
+}
+
+/* Configuración para animación con Intersection Observer */
+.image-stack img.animate {
+    animation-play-state: running;
+}
+
+/* Delay progresivo para efecto de capas */
+.image-stack .layer-2 { animation-delay: 0.2s; }
+.image-stack .layer-3 { animation-delay: 0.3s; }
+.image-stack .layer-4 { animation-delay: 0.4s; }
+
+/* Efecto de capas con clip-path para un deslizamiento más dramático */
+@keyframes layer-reveal {
+    0% {
+        opacity: 0;
+        transform: scale(1.08);
+        clip-path: inset(0 0 100% 0);
+    }
+    40% {
+        opacity: 0.8;
+        transform: scale(1.03);
+        clip-path: inset(0 0 30% 0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.image-stack figcaption {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .jobs,
+    .corrects,
+    .mountages {
+        width: 100%;
+    }
+
+    .corrects,
+    .mountages {
+        columns: 1;
+    }
+
+    .jobs {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .jobs > div,
+    .jobs > figure {
+        flex: 1 1 auto;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .jobs > figure img,
+    .image-stack {
+        width: 100%;
+    }
+}
+
+
+
+/* thinking */
+
+.thinking {
+    width: 70%;
+    margin: 3rem auto 15rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    text-align: left;
+}
+
+.thinking > p {
+    flex: 1 1 50%;
+    margin: 0;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    line-height: 1.45;
+    font-weight: 400;
+    text-align: left;
+}
+
+.thinking figure {
+    flex: 0 1 45%;
+    margin: 0;
+}
+
+.thinking figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 1rem;
+    clip-path: circle(75% at 50% 50%);
+    animation: none;
+}
+
+.thinking figure img.is-visible {
+    animation: camera-shutter 0.8s linear forwards;
+}
+
+.thinking figcaption {
+    width: 100%;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+
+/* contact */
+
+.contact {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15% 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+}
+
+.contact > div {
+    order: 1;
+    flex: 1 1 50%;
+    align-self: center;
+    text-align: left;
+}
+
+.contact h2,
+.contact p,
+.contact a,
+.contact strong {
+    color: #fff;
+    text-align: left;
+}
+
+.contact h2 {
+    margin: 1.5rem 0;
+}
+
+.contact p,
+.contact a {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.contact a {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.contact p a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact > img {
+    order: 2;
+    flex: 1 1 50%;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 50%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+    border-top-width: 0;
+    clip-path: circle(75% at 50% 50%);
+    -webkit-animation: none;
+    animation: none;
+}
+
+.contact > img.is-visible {
+    -webkit-animation: camera-shutter 1.4s linear forwards;
+    animation: camera-shutter 1.4s linear forwards;
+}
+
+
+
+
+
+
+/* Estilos generales */
 
 h1 {
     font-size: 10vh;
     margin-bottom: 1rem;
     color: rgb(237, 236, 237);
-    animation: text-slide-in 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: text-slide-in 0.5s linear both;
+}
+
+.hero h1,
+.hero-portrait h2,
+.contact h2 {
+    animation: none;
+}
+
+.hero h1.is-visible,
+.hero-portrait h2.is-visible,
+.contact h2.is-visible {
+    animation: text-slide-in 0.5s 0.15s linear both;
 }
 
 h2{
     font-size: 8vh;
     color: rgb(237, 236, 237);
-    animation: text-slide-in 1s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: text-slide-in 0.5s 0.15s linear both;
 }
 
 img {
@@ -275,6 +744,45 @@ img {
     .hero-portrait .hero-text p {
         font-size: 1.1rem;
     }
+
+    .thinking {
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 8rem;
+    }
+
+    .thinking > p,
+    .thinking figure {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .thinking > p {
+        font-size: 1.6rem;
+    }
+
+    .contact {
+        width: 100%;
+        padding: 0 1.25rem 3rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact > div,
+    .contact > img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact > div {
+        order: 2;
+        align-self: flex-start;
+    }
+
+    .contact > img {
+        order: 1;
+    }
 }
 
 @media (max-width: 480px) {
@@ -287,6 +795,27 @@ img {
     .hero-portrait img {
         width: 85vw;
         height: 65vh;
+    }
+
+    .image-stack {
+        min-height: 16rem;
+    }
+
+    .thinking > p {
+        font-size: 1.35rem;
+    }
+
+    .contact {
+        padding: 2rem 0;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p,
+    .contact a {
+        font-size: 1rem;
     }
 
     .card {
