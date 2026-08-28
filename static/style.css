@@ -6,6 +6,7 @@
     /* O 'Bodoni Moda  Cinzel Decorative', serif */
     font-weight: 700;
     letter-spacing: 2px;
+    overflow:hidde;
     /* Añadir espacio entre letras resalta mucho este estilo */
 }
 
@@ -425,9 +426,9 @@ body {
 }
 
 /* Delay progresivo para efecto de capas */
-.image-stack .layer-2 { animation-delay: 0.2s; }
-.image-stack .layer-3 { animation-delay: 0.3s; }
-.image-stack .layer-4 { animation-delay: 0.4s; }
+.image-stack .layer-2 { animation-delay: 0.6s; }
+.image-stack .layer-3 { animation-delay: 0.8s; }
+.image-stack .layer-4 { animation-delay: 1s; }
 
 /* Efecto de capas con clip-path para un deslizamiento más dramático */
 @keyframes layer-reveal {
