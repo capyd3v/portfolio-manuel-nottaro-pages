@@ -77,7 +77,7 @@ body {
     border-radius: 1rem;
     clip-path: circle(0% at 50% 50%);
     animation: camera-shutter 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-timeline: view(block 0% 0%);
+    /* animation-timeline: view(block 0% 0%); */
     animation-range: entry 0% cover 40%;
 }
 
@@ -131,7 +131,7 @@ body {
     border-radius: 1rem;
     clip-path: inset(0 100% 0 0);
     animation: image-reveal 1.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-timeline: view(block 0% 0%);
+    /* animation-timeline: view(block 0% 0%); */
     animation-range: entry 0% cover 40%;
 }
 
@@ -157,7 +157,7 @@ body {
     border-radius: 2rem;
     clip-path: inset(0 100% 0 0);
     animation: image-reveal 1.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-timeline: view(block 0% 0%);
+    /* animation-timeline: view(block 0% 0%); */
     animation-range: entry 0% cover 40%;
 }
 
