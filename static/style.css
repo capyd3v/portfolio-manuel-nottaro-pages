@@ -215,3 +215,81 @@ img {
 .card:hover {
     box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.25);
 }
+
+@media (max-width: 768px) {
+    * {
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-overlay,
+    .section-overlay {
+        padding: 1.25rem;
+    }
+
+    .hero-image,
+    .hero-portrait {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-text p {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+    }
+
+    .hero-text p span {
+        font-size: 1.4rem;
+    }
+
+    .hero-image img,
+    .hero-portrait img {
+        width: min(80vw, 22rem);
+        height: min(85vw, 28rem);
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+    }
+
+    h2 {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+
+    .hero-portrait .hero-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay,
+    .section-overlay {
+        padding: 1rem;
+    }
+
+    .hero-image img,
+    .hero-portrait img {
+        width: 85vw;
+        height: 65vh;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+}
